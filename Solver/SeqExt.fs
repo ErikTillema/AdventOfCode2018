@@ -1,5 +1,4 @@
-﻿
-module SeqExt
+﻿module SeqExt
 
     open System
     open System.Collections.Generic
