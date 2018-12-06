@@ -3,10 +3,10 @@
 open System
 open Xunit
 open FsUnit.Xunit
-open Problem5
+open Problem5_ownLinkedListImplementation
 open System.Resources
 
-type Problem5Test() = 
+type Problem5_ownLinkedListImplementationTest() = 
     
     [<Fact>]
     member x.solveSilver_works () = 
