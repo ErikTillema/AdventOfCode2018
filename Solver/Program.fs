@@ -23,8 +23,10 @@ let main argv =
     //res.GetString("problem5.in")                                |> Problem5_ownLinkedListImplementation.solveGold   |> printfn "%d"
     //res.GetString("problem6.in")                                |> Problem6.solveSilver |> printfn "%d"
     //res.GetString("problem6.in")                                |> Problem6.solveGold 10000 |> printfn "%d"
-    res.GetString("problem7.in")                                |> Problem7.solveSilver |> printfn "%d"
-    res.GetString("problem7.in")                                |> Problem7.solveGold   |> printfn "%d"
+    //res.GetString("problem7.in")                                |> Problem7.solveSilver |> printfn "%s"
+    //res.GetString("problem7.in")                                |> Problem7.solveGold 60 5 |> printfn "%d"
+    res.GetString("problem8.in")                                |> Problem8.solveSilver |> printfn "%d"
+    res.GetString("problem8.in")                                |> Problem8.solveGold   |> printfn "%d"
 
     //res.GetString("problemInfi.in")                             |> ProblemInfi.solveSilver 20 20 |> printfn "%d"
     //res.GetString("problemInfi.in")                             |> ProblemInfi.solveGold 20 20   |> printfn "%d"

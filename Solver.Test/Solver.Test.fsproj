@@ -84,6 +84,7 @@
     <Compile Include="Problem5_ownLinkedListImplementationTest.fs" />
     <Compile Include="Problem6Test.fs" />
     <Compile Include="Problem7Test.fs" />
+    <Compile Include="Problem8Test.fs" />
     <Compile Include="ProblemInfiTest.fs" />
     <Content Include="packages.config" />
     <EmbeddedResource Include="Resources.resx" />
