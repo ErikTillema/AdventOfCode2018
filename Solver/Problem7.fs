@@ -67,22 +67,12 @@
         let nodesDoneAt = Dictionary<int,Node list>() // at time t, which Nodes are just done?
         let workersDoneAt = Dictionary<int,int list>() // at time t, which workers are just done?
         let idleWorkers = SortedSet<int>( [0..workers-1] )
-        let relevantTimes = SortedSet<int>([0])
-        
-        let getWorkersDoneAt t = 
-            match workersDoneAt.TryGetValue(t) with
-            | true, result -> result
-            | false, _ -> []
-        let getNodesDoneAt t = 
-            match nodesDoneAt.TryGetValue(t) with
-            | true, result -> result
-            | false, _ -> []
-        let setWorkerDoneAt t worker = 
-            if not(workersDoneAt.ContainsKey(t)) then workersDoneAt.[t] <- []
-            workersDoneAt.[t] <- worker :: workersDoneAt.[t]
-        let setNodeDoneAt t node = 
-            if not(nodesDoneAt.ContainsKey(t)) then nodesDoneAt.[t] <- []
-            nodesDoneAt.[t] <- node :: nodesDoneAt.[t]
+        let relevantTimes = SortedSet<int>()
+        let addRelevantTime t =
+            relevantTimes.Add(t) |> ignore
+            workersDoneAt.Add(t, [])
+            nodesDoneAt.Add(t, [])
+        addRelevantTime 0
 
         let getReadyNodes() = starts
         let getDuration node = 
@@ -90,14 +80,14 @@
 
         let rec solve t nodesDoneTotal =
             // which Nodes are done now?
-            let nodesDoneNow = getNodesDoneAt t |> Seq.length
-            for node in getNodesDoneAt t do
+            let nodesDoneNow = nodesDoneAt.[t] |> Seq.length
+            for node in nodesDoneAt.[t] do
                 for nb in node.neighboursTo do
                     nb.neighboursFrom.Remove(node) |> ignore
                     if inDegree nb = 0 then starts.Add(nb) |> ignore
 
             // which workes became idle?
-            for w in getWorkersDoneAt t do
+            for w in workersDoneAt.[t] do
                 idleWorkers.Add(w) |> ignore
 
             if nodesDoneTotal + nodesDoneNow = nodes.Count then t
@@ -109,11 +99,11 @@
                     | None -> ()
                     | Some(node) -> 
                         let doneAt = t + getDuration node
-                        setWorkerDoneAt doneAt w
-                        setNodeDoneAt doneAt node
+                        addRelevantTime doneAt
+                        workersDoneAt.[doneAt] <- w :: workersDoneAt.[doneAt]
+                        nodesDoneAt.[doneAt] <- node :: nodesDoneAt.[doneAt]
                         starts.Remove(node) |> ignore
                         idleWorkers.Remove(w) |> ignore
-                        relevantTimes.Add(doneAt) |> ignore
                 
                 relevantTimes.Remove(t) |> ignore
                 solve (relevantTimes.Min) (nodesDoneTotal+nodesDoneNow)
