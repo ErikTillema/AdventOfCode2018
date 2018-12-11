@@ -47,10 +47,10 @@
         grid |> Seq.cast<int*int> |> Seq.map fst |> Seq.filter (fun i -> i >= 0) |> Seq.iter (fun i -> cnt.[i] <- cnt.[i] + 1)
         let edges = 
             seq {
-                yield! seq {0..w-1} |> Seq.map (fun x -> (x,0))
-                yield! seq {0..w-1} |> Seq.map (fun x -> (x,h-1))
-                yield! seq {0..h-1} |> Seq.map (fun y -> (0,y))
-                yield! seq {0..h-1} |> Seq.map (fun y -> (w-1,y))
+                yield! [0..w-1] |> Seq.map (fun x -> (x,0))
+                yield! [0..w-1] |> Seq.map (fun x -> (x,h-1))
+                yield! [0..h-1] |> Seq.map (fun y -> (0,y))
+                yield! [0..h-1] |> Seq.map (fun y -> (w-1,y))
             }
         let indicesOnEdge = edges |> Seq.map (fun (x,y) -> grid.[x,y] |> fst) |> Set.ofSeq
         cnt |> Seq.indexed |> Seq.filter (fun (i, _) -> not(indicesOnEdge.Contains(i))) |> Seq.map snd |> Seq.max

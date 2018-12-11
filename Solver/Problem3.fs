@@ -38,5 +38,5 @@
         let rectangles = parseInput input
         let grid = getGrid rectangles
         let isOk {id=_;offset=(ox,oy);size=(w,h)} = 
-            SeqExt.cartesianProduct (seq {ox..ox+w-1}) (seq {oy..oy+h-1}) |> Seq.forall (fun (x,y) -> grid.[x,y] = 1)
+            SeqExt.cartesianProduct [ox..ox+w-1] [oy..oy+h-1] |> Seq.forall (fun (x,y) -> grid.[x,y] = 1)
         (rectangles |> Seq.find isOk).id

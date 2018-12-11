@@ -15,24 +15,22 @@
         let mutable cur = list.First
         let rec simplify() = 
             let rec findPair() = 
-                match cur with
-                | null -> None
-                | _ ->
-                    match cur.Next with 
-                    | null -> None
-                    | _ ->
-                        match cur.Next.Value with
-                        | v when v = invert cur.Value -> Some(1)
-                        | _ -> 
-                            cur <- cur.Next
-                            findPair()
+                if cur = null || cur.Next = null then
+                    None
+                else 
+                    match cur.Next.Value with
+                    | v when v = invert cur.Value -> Some(1)
+                    | _ -> 
+                        cur <- cur.Next
+                        findPair()
             
             match findPair() with
             | None -> ()
             | _ -> 
-                let newCur = match cur.Previous with  
-                             | null -> cur.Next.Next
-                             | _ -> cur.Previous
+                let newCur = if cur.Previous = null then
+                                 cur.Next.Next
+                             else
+                                 cur.Previous
                 list.Remove(cur.Next)
                 list.Remove(cur)
                 cur <- newCur
@@ -53,4 +51,4 @@
         input |> getList None |> solve
 
     let solveGold input = 
-        seq { 'a'..'z' } |> Seq.map (fun c -> input |> getList (Some(c)) |> solve) |> Seq.min
+        ['a'..'z'] |> Seq.map (fun c -> input |> getList (Some(c)) |> solve) |> Seq.min

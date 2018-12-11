@@ -13,7 +13,7 @@
         let rec parseNode vals = 
             let childCount = vals |> Seq.head
             let metadataCount = vals |> Seq.head
-            let children = seq { 0..childCount-1 } |> Seq.map (fun _ -> parseNode vals) |> Seq.toArray
+            let children = [0..childCount-1] |> Seq.map (fun _ -> parseNode vals) |> Seq.toArray
             let metadata = vals |> Seq.take metadataCount |> Seq.toArray
             { metadata = metadata;
               children = children }

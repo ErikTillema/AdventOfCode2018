@@ -111,4 +111,4 @@
         input |> getList None |> solve
 
     let solveGold input = 
-        seq { 'a'..'z' } |> Seq.map (fun c -> input |> getList (Some(c)) |> solve) |> Seq.min
+        ['a'..'z'] |> Seq.map (fun c -> input |> getList (Some(c)) |> solve) |> Seq.min
