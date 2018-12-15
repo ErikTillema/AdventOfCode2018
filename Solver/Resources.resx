@@ -1676,6 +1676,52 @@ position=&lt; 30515, -20003&gt; velocity=&lt;-3,  2&gt;</value>
                                                               |                                     \-------------------------------------/          |
                                                               \--------------------------------------------------------------------------------------/</value>
   </data>
+  <data name="problem15.in" xml:space="preserve">
+    <value>################################
+###############.##...###########
+##############..#...G.#..#######
+##############.............#####
+###############....G....G......#
+##########..........#..........#
+##########................##..##
+######...##..G...G.......####..#
+####..G..#G...............####.#
+#######......G....G.....G#####E#
+#######.................E.######
+########..G...............######
+######....G...#####E...G....####
+######..G..G.#######........####
+###.........#########.......E.##
+###..#..#...#########...E.....##
+######......#########.......####
+#####...G...#########.....######
+#####G......#########.....######
+#...#G..G....#######......######
+###...##......#####.......######
+####..##..G........E...E..######
+#####.####.....######...########
+###########..#...####...E.######
+###############...####..#...####
+###############...###...#.E.####
+#####################.#E....####
+#####################.#...######
+###################...##.#######
+##################..############
+##################...###########
+################################</value>
+  </data>
+  <data name="problem16.in" xml:space="preserve">
+    <value>bla</value>
+  </data>
+  <data name="problem17.in" xml:space="preserve">
+    <value>bla</value>
+  </data>
+  <data name="problem18.in" xml:space="preserve">
+    <value>bla</value>
+  </data>
+  <data name="problem19.in" xml:space="preserve">
+    <value>bla</value>
+  </data>
   <data name="problem2.in" xml:space="preserve">
     <value>vtnihorkulbfvjcyzmsjgdxplw
 vtnihorvujbfejcyzmsqgdlpaw
@@ -1927,6 +1973,24 @@ ctnihorkulbfejcyzmsqgdxpsy
 vtnihorkulbfkjcezmspgdxpaw
 ztnihorkulbmcjcyzmsqgdxpaw
 vinihorkulbfedcyzmsqgdxpau</value>
+  </data>
+  <data name="problem20.in" xml:space="preserve">
+    <value>bla</value>
+  </data>
+  <data name="problem21.in" xml:space="preserve">
+    <value>bla</value>
+  </data>
+  <data name="problem22.in" xml:space="preserve">
+    <value>bla</value>
+  </data>
+  <data name="problem23.in" xml:space="preserve">
+    <value>bla</value>
+  </data>
+  <data name="problem24.in" xml:space="preserve">
+    <value>bla</value>
+  </data>
+  <data name="problem25.in" xml:space="preserve">
+    <value>bla</value>
   </data>
   <data name="problem3.in" xml:space="preserve">
     <value>#1 @ 146,196: 19x14

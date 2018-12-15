@@ -38,8 +38,10 @@ let main argv =
     //res.GetString("problem13.in")     |> Problem13.solveGold   ||> printfn "%d,%d"
     //Problem14.solveSilver 825401      |> printfn "%s"
     //Problem14.solveGold 6 825401      |> printfn "%d"
-    res.GetString("problem15.in")      |> Problem15.solveSilver |> printfn "%d"
-    res.GetString("problem15.in")      |> Problem15.solveGold   |> printfn "%d"
+    //res.GetString("problem15.in")      |> Problem15.solveSilver 32 32 |> printfn "%d"
+    //res.GetString("problem15.in")      |> Problem15.solveGold 32 32   |> printfn "%d"
+    res.GetString("problem16.in")      |> Problem16.solveSilver |> printfn "%d"
+    res.GetString("problem16.in")      |> Problem16.solveGold   |> printfn "%d"
 
     //res.GetString("problemInfi.in")    |> ProblemInfi.solveSilver 20 20 |> printfn "%d"
     //res.GetString("problemInfi.in")    |> ProblemInfi.solveGold 20 20   |> printfn "%d"
