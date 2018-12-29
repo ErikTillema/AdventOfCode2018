@@ -93,6 +93,15 @@
     <Compile Include="Problem14Test.fs" />
     <Compile Include="Problem15Test.fs" />
     <Compile Include="Problem16Test.fs" />
+    <Compile Include="Problem17Test.fs" />
+    <Compile Include="Problem18Test.fs" />
+    <Compile Include="Problem19Test.fs" />
+    <Compile Include="Problem20Test.fs" />
+    <Compile Include="Problem21Test.fs" />
+    <Compile Include="Problem22Test.fs" />
+    <Compile Include="Problem23Test.fs" />
+    <Compile Include="Problem24Test.fs" />
+    <Compile Include="Problem25Test.fs" />
     <Compile Include="ProblemInfiTest.fs" />
     <Content Include="packages.config" />
     <EmbeddedResource Include="Resources.resx" />

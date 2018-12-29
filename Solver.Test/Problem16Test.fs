@@ -10,33 +10,17 @@ type Problem16Test() =
     
     [<Fact>]
     member x.solveSilver_works () = 
-         solveSilver     (  "#########\n"
-                          + "#G......#\n"
-                          + "#.E.#...#\n"
-                          + "#..##..G#\n"
-                          + "#...##..#\n"
-                          + "#...#...#\n"
-                          + "#.G...G.#\n"
-                          + "#.....G.#\n"
-                          + "#########") |> should equal 42
+         solveSilver    (  "Before: [3, 2, 1, 1]\n"
+                         + "9 2 1 2\n"
+                         + "After:  [3, 2, 2, 1]\n") |> should equal 1
     
     [<Fact>]
     member x.solveSilver_isAccepted () = 
         let res = ResourceManager("Resources", System.Reflection.Assembly.GetExecutingAssembly())
-        solveSilver  (res.GetString("problem16.in")) |> should equal 42
-    
-    [<Fact>]
-    member x.solveGold_works () = 
-         solveGold     (  "#######\n"
-                        + "#.G...#\n"
-                        + "#...EG#\n"
-                        + "#.#.#G#\n"
-                        + "#..G#E#\n"
-                        + "#.....#\n"
-                        + "#######") |> should equal 42
+        solveSilver  (res.GetString("problem16.in")) |> should equal 592
     
     [<Fact>]
     member x.solveGold_isAccepted () = 
         let res = ResourceManager("Resources", System.Reflection.Assembly.GetExecutingAssembly())
-        solveGold (res.GetString("problem16.in")) |> should equal 42
+        solveGold (res.GetString("problem16.in")) (res.GetString("problem16part2.in")) |> should equal 557
     
